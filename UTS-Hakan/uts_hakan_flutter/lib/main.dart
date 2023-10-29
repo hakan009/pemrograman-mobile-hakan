@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart'; //tes
+import 'package:carousel_slider/carousel_slider.dart';
 
 void main() {
   runApp(const MainApp());
@@ -12,6 +13,44 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        //   floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        //   bottomNavigationBar: BottomNavigationBar(
+        //     type: BottomNavigationBarType.fixed,
+        //     currentIndex: _tabIndex,
+        //     selectedItemColor: Colors.red,
+        //     unselectedItemColor: Colors.black,
+        //     showUnselectedLabels: true,
+        //     items: const [
+        //       BottomNavigationBarItem(
+        //         icon: Icon(Icons.home),
+        //         label: 'Home',
+        //       ),
+        //       BottomNavigationBarItem(
+        //         icon: Icon(Icons.history),
+        //         label: 'History',
+        //       ),
+        //       BottomNavigationBarItem(
+        //         icon: Icon(
+        //           Icons.analytics,
+        //         ),
+        //         label: 'Pay',
+        //       ),
+        //       BottomNavigationBarItem(
+        //         icon: Icon(Icons.payment),
+        //         label: 'Payment',
+        //       ),
+        //       BottomNavigationBarItem(
+        //         icon: Icon(Icons.person),
+        //         label: 'Profile',
+        //       ),
+        //     ],
+        //     onTap: (index) {
+        //       if (index > 1) return;
+        //       setState(() => _tabIndex = index);
+        //     },
+        //   ),
+        // ),
+
         body: Column(children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -73,9 +112,9 @@ class MainApp extends StatelessWidget {
                       width: 150,
                       height: 75,
                       decoration: BoxDecoration(
-                      color: Colors.white,
-                      border: Border.all(color: Colors.white, width: 2.0),
-                      borderRadius: BorderRadius.circular(10.0),
+                        color: Colors.white,
+                        border: Border.all(color: Colors.white, width: 2.0),
+                        borderRadius: BorderRadius.circular(10.0),
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -92,7 +131,7 @@ class MainApp extends StatelessWidget {
                                 'Rp. 10.000',
                                 style: TextStyle(
                                   color: Colors.black,
-                                  fontWeight: FontWeight.bold, 
+                                  fontWeight: FontWeight.bold,
                                 ),
                               ),
                               Icon(Icons.arrow_forward),
@@ -102,44 +141,283 @@ class MainApp extends StatelessWidget {
                       ),
                     ),
                     Container(
-                  padding: EdgeInsets.all(10.0),
-                  width: 150,
-                  height: 75,
-                  decoration: BoxDecoration(
-                  color: Colors.white,
-                  border: Border.all(color: Colors.white, width: 2.0),
-                  borderRadius: BorderRadius.circular(10.0),
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Bonus Balance',
-                        style: TextStyle(
-                          color: Colors.black,
-                        ),
+                      padding: EdgeInsets.all(10.0),
+                      width: 150,
+                      height: 75,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(color: Colors.white, width: 2.0),
+                        borderRadius: BorderRadius.circular(10.0),
                       ),
-                      Row(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            '0',
+                            'Bonus Balance',
                             style: TextStyle(
                               color: Colors.black,
-                              fontWeight: FontWeight.bold, 
                             ),
                           ),
-                          Icon(Icons.arrow_forward),
+                          Row(
+                            children: [
+                              Text(
+                                '0',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Icon(Icons.arrow_forward),
+                            ],
+                          ),
                         ],
                       ),
-                    ],
-                  ),
-                )
+                    )
                   ],
                 ),
               ],
             ),
-          )
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 10.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  child: Column(children: [
+                    Icon(Icons.add_card_outlined),
+                    Text("TopUp"),
+                  ]),
+                ),
+                Container(
+                  child: Column(children: [
+                    Icon(Icons.money),
+                    Text("Send Money"),
+                  ]),
+                ),
+                Container(
+                  child: Column(children: [
+                    Icon(Icons.airplane_ticket_outlined),
+                    Text("Ticket Code"),
+                  ]),
+                ),
+                Container(
+                  child: Column(children: [
+                    Icon(Icons.airplane_ticket_outlined),
+                    Text("See All"),
+                  ]),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 15.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  child: Column(children: [
+                    Icon(Icons.add_card_outlined),
+                    Text("TopUp"),
+                  ]),
+                ),
+                Container(
+                  child: Column(children: [
+                    Icon(Icons.money),
+                    Text("Send Money"),
+                  ]),
+                ),
+                Container(
+                  child: Column(children: [
+                    Icon(Icons.airplane_ticket_outlined),
+                    Text("Ticket Code"),
+                  ]),
+                ),
+                Container(
+                  child: Column(children: [
+                    Icon(Icons.airplane_ticket_outlined),
+                    Text("See All"),
+                  ]),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 15.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  child: Column(children: [
+                    Icon(Icons.add_card_outlined),
+                    Text("TopUp"),
+                  ]),
+                ),
+                Container(
+                  child: Column(children: [
+                    Icon(Icons.money),
+                    Text("Send Money"),
+                  ]),
+                ),
+                Container(
+                  child: Column(children: [
+                    Icon(Icons.airplane_ticket_outlined),
+                    Text("Ticket Code"),
+                  ]),
+                ),
+                Container(
+                  child: Column(children: [
+                    Icon(Icons.airplane_ticket_outlined),
+                    Text("See All"),
+                  ]),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 15.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  child: Column(children: [
+                    Icon(Icons.add_card_outlined),
+                    Text("TopUp"),
+                  ]),
+                ),
+                Container(
+                  child: Column(children: [
+                    Icon(Icons.money),
+                    Text("Send Money"),
+                  ]),
+                ),
+                Container(
+                  child: Column(children: [
+                    Icon(Icons.airplane_ticket_outlined),
+                    Text("Ticket Code"),
+                  ]),
+                ),
+                Container(
+                  child: Column(children: [
+                    Icon(Icons.airplane_ticket_outlined),
+                    Text("See All"),
+                  ]),
+                ),
+              ],
+            ),
+          ),
+          CarouselSlider(
+            options: CarouselOptions(
+              height: 200.0,
+              enlargeCenterPage: true,
+              autoPlay: true,
+              enlargeFactor: 0.2,
+            ),
+            items: [1, 2, 3, 4, 5].map((i) {
+              return Builder(
+                builder: (BuildContext context) {
+                  return Container(
+                    width: MediaQuery.of(context).size.width,
+                    margin: const EdgeInsets.symmetric(horizontal: 5.0),
+                    decoration: BoxDecoration(
+                      color: Color(0xffff8f4f - i * 100),
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(8),
+                      ),
+                    ),
+                    child: const Text(''),
+                  );
+                },
+              );
+            }).toList(),
+          ),
         ]),
+        
+        bottomNavigationBar: BottomAppBar(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              NavIcon(
+                iconData: Icons.home_outlined,
+                name: "Home",
+                onTap: () {},
+              ),
+              NavIcon(
+                iconData: Icons.history,
+                name: "History",
+                onTap: () {},
+              ),
+              Padding(
+                padding: EdgeInsets.all(10),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(top: 25),
+                      child: Text(
+                        "Pay",
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              NavIcon(
+                iconData: Icons.inbox_outlined,
+                name: "Inbox",
+              ),
+              NavIcon(
+                iconData: Icons.account_circle_outlined,
+                name: "Account",
+              ),
+
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class NavIcon extends StatelessWidget {
+  final IconData iconData;
+  final String name;
+  final void Function()? onTap;
+
+  const NavIcon({
+    super.key,
+    required this.iconData,
+    required this.name,
+    this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(10),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(30),
+        onTap: onTap,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(
+              iconData,
+              color: Colors.grey,
+            ),
+            Text(
+              name,
+              style: const TextStyle(
+                color: Colors.grey,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
