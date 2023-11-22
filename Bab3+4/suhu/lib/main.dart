@@ -27,16 +27,20 @@ class MainApp extends StatelessWidget {
         ),
         body: Container(
           margin: EdgeInsets.all(8),
-          child: TextFormField(
-            decoration: InputDecoration(
-              //Hint Text
-              hintText: 'Enter temperature in Celcius',
-            ),
-            controller: _suhuCelciusController,
-            // Validasi
-            inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-            //Inputan angka
-            keyboardType: TextInputType.number,
+          child: Column(
+            children: [
+              TextFormField(
+                decoration: InputDecoration(
+                  //Hint Text
+                  hintText: 'Enter temperature in Celcius',
+                ),
+                controller: _suhuCelciusController,
+                // Validasi
+                inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                //Inputan angka
+                keyboardType: TextInputType.number,
+              ),
+            ],
           ),
           //child: Text('Hello World!'),
         ),
