@@ -27,6 +27,7 @@ final List<String> imgList = [
   'https://images.unsplash.com/photo-1519985176271-adb1088fa94c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a0c8d632e977f94e5d312d9893258f59&auto=format&fit=crop&w=1355&q=80'
 ];
 
+//Image
 final List<Widget> imageSliders = imgList
     .map((item) => Container(
           margin: const EdgeInsets.all(5.0),
@@ -45,6 +46,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //Listview ben isok discroll
       body: ListView(
         children: [
           Column(children: [
