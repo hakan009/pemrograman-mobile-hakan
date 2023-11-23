@@ -32,7 +32,7 @@ class MainApp extends StatelessWidget {
               TextFormField(
                 decoration: InputDecoration(
                   //Hint Text
-                  hintText: 'Enter temperature in Celcius',
+                  hintText: 'Suhu dalam Celcius',
                 ),
                 controller: _suhuCelciusController,
                 // Validasi
@@ -40,6 +40,57 @@ class MainApp extends StatelessWidget {
                 //Inputan angka
                 keyboardType: TextInputType.number,
               ),
+              Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Container(
+                        width: 135,
+                        height: 120,
+                        child: Column(
+                          children: [
+                            Text('Suhu dalam Kelvin'),
+                            Text(
+                              _suhuKelvin,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 24,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        width: 135,
+                        height: 120,
+                        child: Column(
+                          children: [
+                            Text('Suhu dalam Reamur'),
+                            Text(
+                              _suhuReamur,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 24,
+                              )
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  )
+                ],
+              ),
+              /*
+              ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                  ),
+                  onPressed: _convertSuhu,
+                  child: Text("Konversi")
+              ),
+              */
+
             ],
           ),
           //child: Text('Hello World!'),
